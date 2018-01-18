@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C43ACD029C5B7EE56551F46 /* libPods-opencvTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE0DD537D418973885DB3BA /* libPods-opencvTests.a */; };
 		8C47B47E200C7E88006C9430 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C47B47D200C7E88006C9430 /* AppDelegate.m */; };
 		8C47B481200C7E88006C9430 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C47B480200C7E88006C9430 /* ViewController.mm */; };
 		8C47B484200C7E88006C9430 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C47B482200C7E88006C9430 /* Main.storyboard */; };
@@ -29,6 +30,8 @@
 		8CFE7A7C200C8E0E00CE503D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFE7A7B200C8E0E00CE503D /* CoreGraphics.framework */; };
 		8CFE7A7E200C8E1B00CE503D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFE7A7D200C8E1B00CE503D /* QuartzCore.framework */; };
 		8CFE7A80200C8E2400CE503D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFE7A7F200C8E2400CE503D /* Accelerate.framework */; };
+		B4EEF3A5CE2D9F7744328B3F /* libPods-opencv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DFC27824A3101F10E2071D5 /* libPods-opencv.a */; };
+		DAE934F290DDA7965806B596 /* libPods-opencvUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E2DCE200251C3E8BC2E72E8 /* libPods-opencvUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		114CA5C3C34A7089C8E46C52 /* Pods-opencv.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencv.debug.xcconfig"; path = "Pods/Target Support Files/Pods-opencv/Pods-opencv.debug.xcconfig"; sourceTree = "<group>"; };
+		13E405941BE2914866851FFC /* Pods-opencvUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencvUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-opencvUITests/Pods-opencvUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1E2DCE200251C3E8BC2E72E8 /* libPods-opencvUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-opencvUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CE0DD537D418973885DB3BA /* libPods-opencvTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-opencvTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DFC27824A3101F10E2071D5 /* libPods-opencv.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-opencv.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C47B479200C7E88006C9430 /* opencv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = opencv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C47B47C200C7E88006C9430 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8C47B47D200C7E88006C9430 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,6 +88,10 @@
 		8CFE7A7B200C8E0E00CE503D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8CFE7A7D200C8E1B00CE503D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8CFE7A7F200C8E2400CE503D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		AB0116CD7572CDB61406E18B /* Pods-opencvTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencvTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-opencvTests/Pods-opencvTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C4F06A0AA000DD0816D09C8E /* Pods-opencv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencv.release.xcconfig"; path = "Pods/Target Support Files/Pods-opencv/Pods-opencv.release.xcconfig"; sourceTree = "<group>"; };
+		CE3817A29AD6BE9AA4C17709 /* Pods-opencvUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencvUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-opencvUITests/Pods-opencvUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F0439E937AB692F9FBFC58DE /* Pods-opencvTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencvTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-opencvTests/Pods-opencvTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +110,7 @@
 				8CFE7A72200C8D6700CE503D /* CoreMedia.framework in Frameworks */,
 				8CFE7A70200C8D5D00CE503D /* CoreVideo.framework in Frameworks */,
 				8C47B4AF200C7EC8006C9430 /* opencv2.framework in Frameworks */,
+				B4EEF3A5CE2D9F7744328B3F /* libPods-opencv.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C43ACD029C5B7EE56551F46 /* libPods-opencvTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,12 +126,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE934F290DDA7965806B596 /* libPods-opencvUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26711713F309937C075CADD8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				114CA5C3C34A7089C8E46C52 /* Pods-opencv.debug.xcconfig */,
+				C4F06A0AA000DD0816D09C8E /* Pods-opencv.release.xcconfig */,
+				AB0116CD7572CDB61406E18B /* Pods-opencvTests.debug.xcconfig */,
+				F0439E937AB692F9FBFC58DE /* Pods-opencvTests.release.xcconfig */,
+				CE3817A29AD6BE9AA4C17709 /* Pods-opencvUITests.debug.xcconfig */,
+				13E405941BE2914866851FFC /* Pods-opencvUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8C47B470200C7E88006C9430 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +155,7 @@
 				8C47B47A200C7E88006C9430 /* Products */,
 				8C47B4AE200C7EC8006C9430 /* opencv2.framework */,
 				8CFE7A6E200C8D5D00CE503D /* Frameworks */,
+				26711713F309937C075CADD8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +220,9 @@
 				8CFE7A73200C8D7300CE503D /* AssetsLibrary.framework */,
 				8CFE7A71200C8D6700CE503D /* CoreMedia.framework */,
 				8CFE7A6F200C8D5D00CE503D /* CoreVideo.framework */,
+				7DFC27824A3101F10E2071D5 /* libPods-opencv.a */,
+				4CE0DD537D418973885DB3BA /* libPods-opencvTests.a */,
+				1E2DCE200251C3E8BC2E72E8 /* libPods-opencvUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,9 +234,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C47B4A5200C7E89006C9430 /* Build configuration list for PBXNativeTarget "opencv" */;
 			buildPhases = (
+				9290029C3F0E7E9B27242ACC /* [CP] Check Pods Manifest.lock */,
 				8C47B475200C7E88006C9430 /* Sources */,
 				8C47B476200C7E88006C9430 /* Frameworks */,
 				8C47B477200C7E88006C9430 /* Resources */,
+				2EC53CFDAD685DE9831EEA83 /* [CP] Embed Pods Frameworks */,
+				88432102A40552BF52D8D6D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,9 +254,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C47B4A8200C7E89006C9430 /* Build configuration list for PBXNativeTarget "opencvTests" */;
 			buildPhases = (
+				D13323DA6BA29353EE573011 /* [CP] Check Pods Manifest.lock */,
 				8C47B48D200C7E88006C9430 /* Sources */,
 				8C47B48E200C7E88006C9430 /* Frameworks */,
 				8C47B48F200C7E88006C9430 /* Resources */,
+				77D6D3A5ADB70B35F73C4DF4 /* [CP] Embed Pods Frameworks */,
+				2D3F8DCCD488F086567E7E82 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,9 +275,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C47B4AB200C7E89006C9430 /* Build configuration list for PBXNativeTarget "opencvUITests" */;
 			buildPhases = (
+				BB8AF1510D4BC617A6EEC642 /* [CP] Check Pods Manifest.lock */,
 				8C47B498200C7E89006C9430 /* Sources */,
 				8C47B499200C7E89006C9430 /* Frameworks */,
 				8C47B49A200C7E89006C9430 /* Resources */,
+				F3C7390083FD2B92E978FD43 /* [CP] Embed Pods Frameworks */,
+				7AE3BD0C1D681A5466BC1031 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,6 +365,153 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D3F8DCCD488F086567E7E82 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-opencvTests/Pods-opencvTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EC53CFDAD685DE9831EEA83 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-opencv/Pods-opencv-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77D6D3A5ADB70B35F73C4DF4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-opencvTests/Pods-opencvTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AE3BD0C1D681A5466BC1031 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-opencvUITests/Pods-opencvUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88432102A40552BF52D8D6D8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-opencv/Pods-opencv-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9290029C3F0E7E9B27242ACC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-opencv-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB8AF1510D4BC617A6EEC642 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-opencvUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D13323DA6BA29353EE573011 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-opencvTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3C7390083FD2B92E978FD43 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-opencvUITests/Pods-opencvUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8C47B475200C7E88006C9430 /* Sources */ = {
@@ -494,6 +682,7 @@
 		};
 		8C47B4A6200C7E89006C9430 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 114CA5C3C34A7089C8E46C52 /* Pods-opencv.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -512,6 +701,7 @@
 		};
 		8C47B4A7200C7E89006C9430 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4F06A0AA000DD0816D09C8E /* Pods-opencv.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +720,7 @@
 		};
 		8C47B4A9200C7E89006C9430 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB0116CD7572CDB61406E18B /* Pods-opencvTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -544,6 +735,7 @@
 		};
 		8C47B4AA200C7E89006C9430 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0439E937AB692F9FBFC58DE /* Pods-opencvTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -558,6 +750,7 @@
 		};
 		8C47B4AC200C7E89006C9430 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE3817A29AD6BE9AA4C17709 /* Pods-opencvUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = opencvUITests/Info.plist;
@@ -571,6 +764,7 @@
 		};
 		8C47B4AD200C7E89006C9430 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13E405941BE2914866851FFC /* Pods-opencvUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = opencvUITests/Info.plist;

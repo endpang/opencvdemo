@@ -14,6 +14,7 @@
 #import <Photos/Photos.h>
 #import "CustomAlbum.h"
 #import <UIKit/UIKit.h>
+#import <AFNetworking.h>
 
 //@interface ViewController ()
 NSString * const CSAlbum = @"opencv";
@@ -52,7 +53,7 @@ NSString * const CSAlbumIdentifier = @"albumIdentifier";
     
     videoCamera = [[CvVideoCamera alloc] initWithParentView:cameraView];
     videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;// AVCaptureDevicePositionFront;
-    videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset1280x720;
+    videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPresetiFrame960x540;
     videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
    
     videoCamera.defaultFPS = 30;
@@ -74,7 +75,7 @@ NSString * const CSAlbumIdentifier = @"albumIdentifier";
 - (void)buttonPrint{
 
     /**/
-   
+
     [CustomAlbum addNewAssetWithImage:cameraView.image toAlbum:[CustomAlbum getMyAlbumWithName:CSAlbum] onSuccess:^(NSString *ImageId) {
         NSLog(@"imageId:%@",ImageId);
         //recentImg = ImageId;
@@ -84,6 +85,58 @@ NSString * const CSAlbumIdentifier = @"albumIdentifier";
     }];
      //*/
     printf("测试打印");
+    UIImage *image = cameraView.image;
+    NSMutableArray *photos = [NSMutableArray array];
+    [photos addObject:image];
+    
+    //temp为服务器URL;
+    NSString *url = @"http://cd-zhiweip-media.bj.opera.org.cn/post.php";
+    
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:url parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        //参数name：是后台给你的图片在服务器上字段名;
+        //参数fileNmae：自己起得一个名字，
+        //参数mimeType：这个是决定于后来接收什么类型的图片，接收的时png就用image/png ,接收的时jpeg就用image/jpeg
+        
+        for (int i = 0; i < photos.count; i++) {
+            NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
+            formatter.dateFormat=@"yyyyMMddHHmmss";
+            NSString *str=[formatter stringFromDate:[NSDate date]];
+            NSString *fileName=[NSString stringWithFormat:@"%@.png",str];
+            UIImage *image = photos[i];
+            //NSData *imageData = UIImageJPEGRepresentation(image, 0.28);
+            NSData *imageData = UIImagePNGRepresentation(image);
+            [formData appendPartWithFileData:imageData name:[NSString stringWithFormat:@"upload%d",i+1] fileName:fileName mimeType:@"image/png"];
+        }
+        //        [formData appendPartWithFileData:imageData name:@"Filedata" fileName:@"Filedate.png" mimeType:@"image/png"];
+        
+        
+    } error:nil];
+    
+    
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    //设置服务器返回内容的接受格式
+    AFHTTPResponseSerializer *responseSer = [AFHTTPResponseSerializer serializer];
+    responseSer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+    manager.responseSerializer = responseSer;
+    
+    //    NSProgress *progress = nil;
+    
+    NSURLSessionUploadTask *uploadTask = [manager uploadTaskWithStreamedRequest:request progress:nil completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error: %@", error);
+            
+        } else {
+            
+            NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+            
+            NSLog(@"%@\n %@", response, str);
+        }
+    }];
+    
+    [uploadTask resume];
+
 }
 
 
