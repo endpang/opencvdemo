@@ -53,7 +53,7 @@ NSString * const CSAlbumIdentifier = @"albumIdentifier";
     
     videoCamera = [[CvVideoCamera alloc] initWithParentView:cameraView];
     videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;// AVCaptureDevicePositionFront;
-    videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPresetiFrame960x540;
+    videoCamera.defaultAVCaptureSessionPreset =  AVCaptureSessionPreset640x480; //AVCaptureSessionPresetiFrame1280x720;
     videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
    
     videoCamera.defaultFPS = 30;
@@ -90,7 +90,7 @@ NSString * const CSAlbumIdentifier = @"albumIdentifier";
     [photos addObject:image];
     
     //temp为服务器URL;
-    NSString *url = @"http://cd-zhiweip-media.bj.opera.org.cn/post.php";
+    NSString *url = @"http://192.168.31.107/post.php";
     
     NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:url parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         //参数name：是后台给你的图片在服务器上字段名;
@@ -152,8 +152,12 @@ NSString * const CSAlbumIdentifier = @"albumIdentifier";
 
 #pragma mark -  CvVideoCameraDelegate
 - (void)processImage:(cv::Mat&)image {
-    
-    /**/
+    cv::Mat image_copy;
+    cv::Canny(image, image_copy, 100,150);
+    cv::bitwise_not(image_copy, image_copy);
+
+    image = image_copy;
+    /**
     //在这儿我们将要添加图形处理的代码
     cv::Mat image_copy;
     cv::Mat thresholdImg;
@@ -172,14 +176,14 @@ NSString * const CSAlbumIdentifier = @"albumIdentifier";
     
     //反转图片
     
-    cv::bitwise_not(thresholdImg, thresholdImg);
     cv::GaussianBlur(thresholdImg, thresholdImg, cv::Size(5,5), 1.2,1.2);
     //将处理后的图片赋值给image，用来显示
     //cv::medianBlur(thresholdImg, thresholdImg, 5); 中值滤波
     cv::cvtColor(thresholdImg, image, cv::COLOR_GRAY2BGR);
-    cameraView.image =  MatToUIImage(image);
+   
     
     //*/
+     cameraView.image =  MatToUIImage(image);
 }
 
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		102F228A2010F9EF003A819B /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102F22892010F9EF003A819B /* opencv2.framework */; };
+		102F228B2010FF7C003A819B /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 102F228C2010FF7C003A819B /* libAFNetworking.a */; };
 		1C43ACD029C5B7EE56551F46 /* libPods-opencvTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE0DD537D418973885DB3BA /* libPods-opencvTests.a */; };
 		8C47B47E200C7E88006C9430 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C47B47D200C7E88006C9430 /* AppDelegate.m */; };
 		8C47B481200C7E88006C9430 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C47B480200C7E88006C9430 /* ViewController.mm */; };
@@ -30,7 +32,6 @@
 		8CFE7A7C200C8E0E00CE503D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFE7A7B200C8E0E00CE503D /* CoreGraphics.framework */; };
 		8CFE7A7E200C8E1B00CE503D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFE7A7D200C8E1B00CE503D /* QuartzCore.framework */; };
 		8CFE7A80200C8E2400CE503D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFE7A7F200C8E2400CE503D /* Accelerate.framework */; };
-		B4EEF3A5CE2D9F7744328B3F /* libPods-opencv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DFC27824A3101F10E2071D5 /* libPods-opencv.a */; };
 		DAE934F290DDA7965806B596 /* libPods-opencvUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E2DCE200251C3E8BC2E72E8 /* libPods-opencvUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		102F22892010F9EF003A819B /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		102F228C2010FF7C003A819B /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		114CA5C3C34A7089C8E46C52 /* Pods-opencv.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencv.debug.xcconfig"; path = "Pods/Target Support Files/Pods-opencv/Pods-opencv.debug.xcconfig"; sourceTree = "<group>"; };
 		13E405941BE2914866851FFC /* Pods-opencvUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencvUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-opencvUITests/Pods-opencvUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1E2DCE200251C3E8BC2E72E8 /* libPods-opencvUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-opencvUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,18 +102,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				102F228B2010FF7C003A819B /* libAFNetworking.a in Frameworks */,
 				8C94A52B200E0AD400B28D96 /* Photos.framework in Frameworks */,
 				8CFE7A80200C8E2400CE503D /* Accelerate.framework in Frameworks */,
 				8CFE7A7E200C8E1B00CE503D /* QuartzCore.framework in Frameworks */,
 				8CFE7A7C200C8E0E00CE503D /* CoreGraphics.framework in Frameworks */,
 				8CFE7A7A200C8E0700CE503D /* CoreImage.framework in Frameworks */,
+				102F228A2010F9EF003A819B /* opencv2.framework in Frameworks */,
 				8CFE7A78200C8E0000CE503D /* AVFoundation.framework in Frameworks */,
 				8CFE7A76200C8DF700CE503D /* libc++.tbd in Frameworks */,
 				8CFE7A74200C8D7300CE503D /* AssetsLibrary.framework in Frameworks */,
 				8CFE7A72200C8D6700CE503D /* CoreMedia.framework in Frameworks */,
 				8CFE7A70200C8D5D00CE503D /* CoreVideo.framework in Frameworks */,
 				8C47B4AF200C7EC8006C9430 /* opencv2.framework in Frameworks */,
-				B4EEF3A5CE2D9F7744328B3F /* libPods-opencv.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +153,7 @@
 		8C47B470200C7E88006C9430 = {
 			isa = PBXGroup;
 			children = (
+				102F22892010F9EF003A819B /* opencv2.framework */,
 				8C47B47B200C7E88006C9430 /* opencv */,
 				8C47B494200C7E88006C9430 /* opencvTests */,
 				8C47B49F200C7E89006C9430 /* opencvUITests */,
@@ -210,6 +215,7 @@
 		8CFE7A6E200C8D5D00CE503D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				102F228C2010FF7C003A819B /* libAFNetworking.a */,
 				8C94A52A200E0AD300B28D96 /* Photos.framework */,
 				8CFE7A7F200C8E2400CE503D /* Accelerate.framework */,
 				8CFE7A7D200C8E1B00CE503D /* QuartzCore.framework */,
