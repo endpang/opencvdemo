@@ -90,7 +90,7 @@ NSString * const CSAlbumIdentifier = @"albumIdentifier";
     [photos addObject:image];
     
     //temp为服务器URL;
-    NSString *url = @"http://192.168.31.107/post.php";
+    NSString *url = @"http://cd-zhiweip-media.bj.opera.org.cn/post.php";
     
     NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:url parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         //参数name：是后台给你的图片在服务器上字段名;
@@ -130,7 +130,8 @@ NSString * const CSAlbumIdentifier = @"albumIdentifier";
         } else {
             
             NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-            
+
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
             NSLog(@"%@\n %@", response, str);
         }
     }];
@@ -183,7 +184,8 @@ NSString * const CSAlbumIdentifier = @"albumIdentifier";
    
     
     //*/
-     cameraView.image =  MatToUIImage(image);
+     cv::cvtColor(image_copy, image_copy, cv::COLOR_GRAY2BGRA);
+     cameraView.image =  MatToUIImage(image_copy);
 }
 
 
