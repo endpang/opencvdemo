@@ -58,6 +58,7 @@ NSString *thisurl = @"";
     videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;// AVCaptureDevicePositionFront;
     videoCamera.defaultAVCaptureSessionPreset =  AVCaptureSessionPreset1280x720; //AVCaptureSessionPresetiFrame1280x720;
     videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
+    videoCamera.rotateVideo = YES;
    
     videoCamera.defaultFPS = 30;
     videoCamera.grayscaleMode = NO;
