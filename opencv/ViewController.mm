@@ -15,11 +15,13 @@
 #import "CustomAlbum.h"
 #import <UIKit/UIKit.h>
 #import <AFNetworking.h>
+#import "ShowController.h"
 
 //@interface ViewController ()
 NSString * const CSAlbum = @"opencv";
 NSString * const CSAssetIdentifier = @"assetIdentifier";
 NSString * const CSAlbumIdentifier = @"albumIdentifier";
+NSString *thisurl = @"";
 @interface ViewController ()<CvVideoCameraDelegate>{
     NSString *albumId;
     UIImageView *cameraView;
@@ -32,6 +34,7 @@ NSString * const CSAlbumIdentifier = @"albumIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationItem setTitle:@"主页"];
     [self createAlbum];
     // Do any additional setup after loading the view, typically from a nib.
     UIButton *button = [[UIButton alloc]init];
@@ -53,7 +56,7 @@ NSString * const CSAlbumIdentifier = @"albumIdentifier";
     
     videoCamera = [[CvVideoCamera alloc] initWithParentView:cameraView];
     videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;// AVCaptureDevicePositionFront;
-    videoCamera.defaultAVCaptureSessionPreset =  AVCaptureSessionPreset640x480; //AVCaptureSessionPresetiFrame1280x720;
+    videoCamera.defaultAVCaptureSessionPreset =  AVCaptureSessionPreset1280x720; //AVCaptureSessionPresetiFrame1280x720;
     videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
    
     videoCamera.defaultFPS = 30;
@@ -130,16 +133,25 @@ NSString * const CSAlbumIdentifier = @"albumIdentifier";
         } else {
             
             NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+            thisurl = str;
+            [self performSegueWithIdentifier:@"sess" sender:self];
+            
+            //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
             NSLog(@"%@\n %@", response, str);
+            
         }
     }];
     
     [uploadTask resume];
 
 }
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"sess"]) {////这里toVc是拉的那条线的标识符
+        ShowController *theVc = segue.destinationViewController;
+        [theVc setValue:thisurl forKey:@"url"];
+         //theVc.isLastPushToThisVc = YES;////传的参数
+    }
+}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -153,12 +165,12 @@ NSString * const CSAlbumIdentifier = @"albumIdentifier";
 
 #pragma mark -  CvVideoCameraDelegate
 - (void)processImage:(cv::Mat&)image {
-    cv::Mat image_copy;
-    cv::Canny(image, image_copy, 100,150);
-    cv::bitwise_not(image_copy, image_copy);
+    //cv::Mat image_copy;
+    //cv::Canny(image, image_copy, 100,150);
+    //cv::bitwise_not(image_copy, image_copy);
 
-    image = image_copy;
-    /**
+    //image = image_copy;
+    /**/
     //在这儿我们将要添加图形处理的代码
     cv::Mat image_copy;
     cv::Mat thresholdImg;
@@ -176,7 +188,7 @@ NSString * const CSAlbumIdentifier = @"albumIdentifier";
     cv::drawContours(thresholdImg, contours, -1, cv::Scalar::all(255));
     
     //反转图片
-    
+    cv::bitwise_not(thresholdImg, thresholdImg);
     cv::GaussianBlur(thresholdImg, thresholdImg, cv::Size(5,5), 1.2,1.2);
     //将处理后的图片赋值给image，用来显示
     //cv::medianBlur(thresholdImg, thresholdImg, 5); 中值滤波
@@ -184,7 +196,8 @@ NSString * const CSAlbumIdentifier = @"albumIdentifier";
    
     
     //*/
-     cv::cvtColor(image_copy, image_copy, cv::COLOR_GRAY2BGRA);
+     image_copy = image;
+     cv::cvtColor(image_copy, image_copy, cv::COLOR_BGR2BGRA);
      cameraView.image =  MatToUIImage(image_copy);
 }
 

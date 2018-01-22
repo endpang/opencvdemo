@@ -23,6 +23,7 @@
 		8C94A529200DF6FA00B28D96 /* 108 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C94A528200DF6FA00B28D96 /* 108 copy.png */; };
 		8C94A52B200E0AD400B28D96 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C94A52A200E0AD300B28D96 /* Photos.framework */; };
 		8C94A544200F2C1400B28D96 /* CustomAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C94A542200F2C1300B28D96 /* CustomAlbum.m */; };
+		8CAF205D2015D0F600A2B292 /* ShowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8CAF205C2015D0F600A2B292 /* ShowController.mm */; };
 		8CFE7A70200C8D5D00CE503D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFE7A6F200C8D5D00CE503D /* CoreVideo.framework */; };
 		8CFE7A72200C8D6700CE503D /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFE7A71200C8D6700CE503D /* CoreMedia.framework */; };
 		8CFE7A74200C8D7300CE503D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CFE7A73200C8D7300CE503D /* AssetsLibrary.framework */; };
@@ -82,6 +83,8 @@
 		8C94A52A200E0AD300B28D96 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		8C94A542200F2C1300B28D96 /* CustomAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAlbum.m; sourceTree = "<group>"; };
 		8C94A543200F2C1400B28D96 /* CustomAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAlbum.h; sourceTree = "<group>"; };
+		8CAF205B2015D0F600A2B292 /* ShowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowController.h; sourceTree = "<group>"; };
+		8CAF205C2015D0F600A2B292 /* ShowController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ShowController.mm; sourceTree = "<group>"; };
 		8CFE7A6F200C8D5D00CE503D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		8CFE7A71200C8D6700CE503D /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		8CFE7A73200C8D7300CE503D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -190,6 +193,8 @@
 				8C47B487200C7E88006C9430 /* LaunchScreen.storyboard */,
 				8C47B48A200C7E88006C9430 /* Info.plist */,
 				8C47B48B200C7E88006C9430 /* main.m */,
+				8CAF205B2015D0F600A2B292 /* ShowController.h */,
+				8CAF205C2015D0F600A2B292 /* ShowController.mm */,
 			);
 			path = opencv;
 			sourceTree = "<group>";
@@ -527,6 +532,7 @@
 				8C94A544200F2C1400B28D96 /* CustomAlbum.m in Sources */,
 				8C47B481200C7E88006C9430 /* ViewController.mm in Sources */,
 				8C47B48C200C7E88006C9430 /* main.m in Sources */,
+				8CAF205D2015D0F600A2B292 /* ShowController.mm in Sources */,
 				8C47B47E200C7E88006C9430 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -691,6 +697,7 @@
 			baseConfigurationReference = 114CA5C3C34A7089C8E46C52 /* Pods-opencv.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9U9Z4N6U6;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -699,8 +706,9 @@
 				);
 				INFOPLIST_FILE = opencv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.endler.opencv2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.endler.open2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -710,6 +718,7 @@
 			baseConfigurationReference = C4F06A0AA000DD0816D09C8E /* Pods-opencv.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9U9Z4N6U6;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -718,8 +727,9 @@
 				);
 				INFOPLIST_FILE = opencv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.endler.opencv2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.endler.open2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
