@@ -11,7 +11,8 @@
 #include <opencv2/imgcodecs/ios.h>
 
 @interface ShowController (){
-   
+    CvScalar Scalar1;
+    UIButton *button;
 }
 
 @end
@@ -20,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     /**
     CGRect bouds = [UIScreen mainScreen].bounds;
     UIWebView* webView = [[UIWebView alloc]initWithFrame:bouds];
@@ -65,11 +66,31 @@
     UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickImage:)];
     [imageView addGestureRecognizer:singleTap];
     
+    
+    
+    button= [[UIButton alloc]init];
+    [button setTitle:@"换色" forState:UIControlStateNormal];
+    //UIImage *imgNormal = [UIImage imageNamed:@"108"];
+    //UIImage *imgHighlighted = [UIImage imageNamed:@"109"];
+    button.backgroundColor = UIColor.blueColor;
+    //[button setBackgroundImage:imgNormal forState:UIControlStateNormal];
+    //[button setBackgroundImage:imgHighlighted forState:UIControlStateHighlighted];
+    button.frame = CGRectMake(280, 600, 100, 100);
+    
+    [button addTarget:self action:@selector(buttonPrint) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
     //*/
     //NSLog(@"%@",self.url );
     // Do any additional setup after loading the view.
 }
-
+- (void)buttonPrint{
+    cv::RNG rng(time(0));
+    int a = rng.uniform(0,255);
+    int b = rng.uniform(0,255);
+    int c = rng.uniform(0,255);
+    Scalar1 = CvScalar(a,b,c);
+    //button.backgroundColor = UIColor.
+}
 -(void)onClickImage:(UITapGestureRecognizer *)recognizer{
     CGPoint location = [recognizer locationInView:[recognizer.view superview]];
     
@@ -83,7 +104,7 @@
     UIImageToMat(image, image_copy);
     cv::cvtColor(image_copy, image_copy, cv::COLOR_BGRA2BGR);
 
-    cv::circle(image_copy,cv::Point(location.x * 2.5, location.y * 2.5), 50,cv::Scalar(0,0,255),10);
+    cv::circle(image_copy,cv::Point(location.x * 2.5, location.y * 2.5), 8,Scalar1,2);
     //cv::rectangle(image_copy, cv::Point(location.x * 2.5, location.y * 2.5), cv::Point(location.x * 2.8, location.y * 2.8), cv::Scalar(255, 0, 0,0),-1);
     //cv::cvtColor(image_copy, image_copy, cv::COLOR_BGRA2RGBA);
     image = MatToUIImage(image_copy);
