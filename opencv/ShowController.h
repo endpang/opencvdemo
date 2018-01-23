@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ShowController : UIViewController
-@property (weak, nonatomic) NSString *url; 
+@interface ShowController : UIViewController <UIGestureRecognizerDelegate>  
+@property (weak, nonatomic) NSString *url;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView; 
 @end

@@ -79,7 +79,8 @@ NSString *thisurl = @"";
 - (void)buttonPrint{
 
     /**/
-
+    //videoCamera.stop;
+    
     [CustomAlbum addNewAssetWithImage:cameraView.image toAlbum:[CustomAlbum getMyAlbumWithName:CSAlbum] onSuccess:^(NSString *ImageId) {
         NSLog(@"imageId:%@",ImageId);
         //recentImg = ImageId;
@@ -88,7 +89,7 @@ NSString *thisurl = @"";
         NSLog(@"probelm in saving image 11111: %@",error);
     }];
      //*/
-    printf("测试打印");
+    //printf("测试打印");
     UIImage *image = cameraView.image;
     NSMutableArray *photos = [NSMutableArray array];
     [photos addObject:image];
