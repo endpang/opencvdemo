@@ -10,5 +10,6 @@
 
 @interface ShowController : UIViewController <UIGestureRecognizerDelegate>  
 @property (weak, nonatomic) NSString *url;
+@property (weak, nonatomic) NSString *imageid;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView; 
 @end

@@ -22,6 +22,7 @@ NSString * const CSAlbum = @"opencv";
 NSString * const CSAssetIdentifier = @"assetIdentifier";
 NSString * const CSAlbumIdentifier = @"albumIdentifier";
 NSString *thisurl = @"";
+NSString *thisimageid = @"";
 @interface ViewController ()<CvVideoCameraDelegate>{
     NSString *albumId;
     UIImageView *cameraView;
@@ -83,6 +84,7 @@ NSString *thisurl = @"";
     
     [CustomAlbum addNewAssetWithImage:cameraView.image toAlbum:[CustomAlbum getMyAlbumWithName:CSAlbum] onSuccess:^(NSString *ImageId) {
         NSLog(@"imageId:%@",ImageId);
+        //thisimageid = ImageId;
         //recentImg = ImageId;
     } onError:^(NSError *error) {
         
@@ -135,7 +137,10 @@ NSString *thisurl = @"";
         } else {
             
             NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-            thisurl = str;
+            //thisurl = str;
+            thisimageid = str;
+            thisurl = [NSString stringWithFormat:@"%@=%@",@"http://cd-zhiweip-media.bj.opera.org.cn/jpg.php?id",str];
+   
             [self performSegueWithIdentifier:@"sess" sender:self];
             
             //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
@@ -151,6 +156,8 @@ NSString *thisurl = @"";
     if ([segue.identifier isEqualToString:@"sess"]) {////这里toVc是拉的那条线的标识符
         ShowController *theVc = segue.destinationViewController;
         [theVc setValue:thisurl forKey:@"url"];
+        NSLog(@"thisurl: %@", thisurl);
+        [theVc setValue:thisimageid forKey:@"imageid"];
          //theVc.isLastPushToThisVc = YES;////传的参数
     }
 }
@@ -183,7 +190,16 @@ NSString *thisurl = @"";
     
     cv::adaptiveThreshold(image_copy, thresholdImg, 255, cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY_INV, 7, 7);
     cv::findContours(thresholdImg, contours, CV_RETR_LIST, CV_CHAIN_APPROX_NONE);
-    
+    int cmin = 50; //最小轮廓长度
+    int cmax = 10000;    //最大轮廓
+    std::vector<std::vector<cv::Point>>::const_iterator itc = contours.begin();
+    while (itc!=contours.end())
+    {
+        if (itc->size() < cmin || itc->size() > cmax)
+            itc = contours.erase(itc);
+        else
+            ++itc;
+    }
 
     
     thresholdImg = cv::Scalar::all(0);
